@@ -1,4 +1,6 @@
----
+---if [[ -z "$PR_NUMBER" ]]; then
+  PR_NUMBER=$(gh pr view --json number -q .number 2>/dev/null)
+file rishiclb08@gmail.com
 description: Check PR build status, analyze failures, and propose fixes
 allowed-tools: Bash, Read, Glob, Grep, Task, AskUserQuestion, WebFetch
 argument-hint: [--pr=NUMBER (auto)]
